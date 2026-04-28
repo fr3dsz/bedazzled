@@ -70,7 +70,7 @@ export const orderType = defineType({
       type: "number",
       group: "details",
       readOnly: true,
-      description: "Total order amount in GBP",
+      description: "Total order amount in PHP",
     }),
     defineField({
       name: "status",
@@ -109,11 +109,11 @@ export const orderType = defineType({
       fields: [defineField({ name: "name", type: "string", title: "Full Name" }), defineField({ name: "line1", type: "string", title: "Address Line 1" }), defineField({ name: "line2", type: "string", title: "Address Line 2" }), defineField({ name: "city", type: "string" }), defineField({ name: "postcode", type: "string", title: "Postcode" }), defineField({ name: "country", type: "string" })],
     }),
     defineField({
-      name: "stripePaymentId",
+      name: "paymongoPaymentId",
       type: "string",
       group: "payment",
       readOnly: true,
-      description: "Stripe payment intent ID",
+      description: "Paymongo payment intent ID",
     }),
     defineField({
       name: "createdAt",
