@@ -20,7 +20,7 @@ export function StockBadge({ productId, stock, className }: StockBadgeProps) {
 
   if (isAtMax) {
     return (
-      <Badge variant="secondary" className={cn("w-fit bg-[#F9F1F4] text-[#7D2035] dark:bg-[#4A0E1F]/50 dark:text-[#F5EDE0]", className)}>
+      <Badge variant="secondary" className={cn("w-fit bg-[#F9EEF5] text-[#8F4D7B] dark:bg-[#3D1F35]/50 dark:text-[#F5EDE0]", className)}>
         Max in cart
       </Badge>
     );
@@ -28,7 +28,7 @@ export function StockBadge({ productId, stock, className }: StockBadgeProps) {
 
   if (lowStock) {
     return (
-      <Badge variant="secondary" className={cn("w-fit bg-[#F5E0E6] text-[#4A0E1F] dark:bg-[#7D2035]/30 dark:text-[#E8C8D4]", className)}>
+      <Badge variant="secondary" className={cn("w-fit bg-[#FAE8F3] text-[#6A395B] dark:bg-[#8F4D7B]/30 dark:text-[#EDD5E8]", className)}>
         Only {stock} left in stock
       </Badge>
     );

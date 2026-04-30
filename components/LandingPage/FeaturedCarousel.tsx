@@ -43,19 +43,8 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
   if (products.length === 0) return null;
 
   return (
-    <div className="relative w-full bg-gradient-to-br from-[#2D1018] via-[#4A0E1F] to-[#2D1018] dark:from-[#1A0810] dark:via-[#2D1018] dark:to-[#1A0810]">
-      <Carousel
-        setApi={setApi}
-        opts={{ loop: true, align: "start" }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-          }),
-        ]}
-        className="w-full"
-      >
+    <div className="relative w-full bg-gradient-to-br from-[#6A395B] via-[#8F4D7B] to-[#6A395B] dark:from-[#3D1F35] dark:via-[#6A395B] dark:to-[#3D1F35]">
+      <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]} className="w-full">
         <CarouselContent className="-ml-0">
           {products.map((product) => (
             <CarouselItem key={product._id} className="pl-0">
@@ -65,15 +54,15 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
         </CarouselContent>
 
         {/* Navigation arrows */}
-        <CarouselPrevious className="left-4 border-[#7D2035] bg-[#4A0E1F]/80 text-[#F5EDE0] hover:bg-[#7D2035] hover:text-[#F5EDE0] sm:left-8" />
-        <CarouselNext className="right-4 border-[#7D2035] bg-[#4A0E1F]/80 text-[#F5EDE0] hover:bg-[#7D2035] hover:text-[#F5EDE0] sm:right-8" />
+        <CarouselPrevious className="left-4 border-[#8F4D7B] bg-[#6A395B]/80 text-[#F5EDE0] hover:bg-[#8F4D7B] hover:text-[#F5EDE0] sm:left-8" />
+        <CarouselNext className="right-4 border-[#8F4D7B] bg-[#6A395B]/80 text-[#F5EDE0] hover:bg-[#8F4D7B] hover:text-[#F5EDE0] sm:right-8" />
       </Carousel>
 
       {/* Dot indicators */}
       {count > 1 && (
         <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 sm:bottom-6">
           {Array.from({ length: count }).map((_, index) => (
-            <button key={`dot-${index}`} type="button" onClick={() => scrollTo(index)} className={cn("h-2 rounded-full transition-all duration-300", current === index ? "w-6 bg-[#F5EDE0]" : "w-2 bg-[#B8899A]/50 hover:bg-[#B8899A]")} aria-label={`Go to slide ${index + 1}`} />
+            <button key={`dot-${index}`} type="button" onClick={() => scrollTo(index)} className={cn("h-2 rounded-full transition-all duration-300", current === index ? "w-6 bg-[#F5EDE0]" : "w-2 bg-[#DA90C4]/50 hover:bg-[#DA90C4]")} aria-label={`Go to slide ${index + 1}`} />
           ))}
         </div>
       )}
@@ -95,35 +84,31 @@ function FeaturedSlide({ product }: FeaturedSlideProps) {
         {mainImage ? (
           <Image src={mainImage} alt={product.name ?? "Featured product"} fill className="object-cover" sizes="(max-width: 768px) 100vw, 60vw" priority />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[#4A0E1F]">
-            <span className="text-[#B8899A]">No image</span>
+          <div className="flex h-full items-center justify-center bg-[#6A395B]">
+            <span className="text-[#BE7EAB]">No image</span>
           </div>
         )}
 
         {/* Gradient overlay blending into content */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#2D1018]/90 dark:to-[#1A0810]/90 hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2D1018]/90 via-transparent to-transparent md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#6A395B]/90 dark:to-[#3D1F35]/90 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#6A395B]/90 via-transparent to-transparent md:hidden" />
       </div>
 
       {/* Content Section - Right side */}
       <div className="flex w-full flex-col justify-center px-6 py-8 md:w-2/5 md:px-10 lg:px-16">
         {product.category && (
-          <Badge variant="secondary" className="mb-4 w-fit bg-[#7D2035]/30 text-[#F5EDE0] hover:bg-[#7D2035]/50 border border-[#B8899A]/30">
+          <Badge variant="secondary" className="mb-4 w-fit bg-[#8F4D7B]/30 text-[#F5EDE0] hover:bg-[#8F4D7B]/50 border border-[#DA90C4]/30">
             {product.category.title}
           </Badge>
         )}
 
         <h2 className="text-2xl font-bold tracking-tight text-[#F5EDE0] sm:text-3xl lg:text-4xl">{product.name}</h2>
-
-        {product.description && <p className="mt-4 line-clamp-3 text-sm text-[#E8C8D4] sm:text-base lg:text-lg">{product.description}</p>}
-
+        {product.description && <p className="mt-4 line-clamp-3 text-sm text-[#EDD5E8] sm:text-base lg:text-lg">{product.description}</p>}
         <p className="mt-6 text-3xl font-bold text-[#F5EDE0] lg:text-4xl">{formatPrice(product.price)}</p>
-
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" className="bg-[#F5EDE0] text-[#2D1018] hover:bg-[#E8D0D8] transition-colors duration-200">
+          <Button asChild size="lg" className="bg-[#F5EDE0] text-[#6A395B] hover:bg-[#EDD5E8] transition-colors duration-200">
             <Link href={`/products/${product.slug}`}>
-              Shop Now
-              <ArrowRight className="ml-2 h-4 w-4" />
+              Shop Now <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

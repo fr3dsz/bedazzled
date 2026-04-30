@@ -39,7 +39,7 @@ export function AddToCartButton({ productId, name, price, image, stock, classNam
   // Out of stock
   if (isOutOfStock) {
     return (
-      <Button disabled variant="secondary" className={cn("h-11 w-full bg-[#F9F1F4] text-[#B8899A] dark:bg-[#2D1018] dark:text-[#7D2035]/50", className)}>
+      <Button disabled variant="secondary" className={cn("h-11 w-full bg-[#F9EEF5] text-[#BE7EAB] dark:bg-[#6A395B] dark:text-[#8F4D7B]/50", className)}>
         Out of Stock
       </Button>
     );
@@ -48,7 +48,7 @@ export function AddToCartButton({ productId, name, price, image, stock, classNam
   // Not in cart — show Add to Basket button
   if (quantityInCart === 0) {
     return (
-      <Button onClick={handleAdd} className={cn("h-11 w-full bg-[#7D2035] text-[#F5EDE0] hover:bg-[#4A0E1F] dark:bg-[#7D2035] dark:text-[#F5EDE0] dark:hover:bg-[#4A0E1F]", className)}>
+      <Button onClick={handleAdd} className={cn("h-11 w-full bg-[#8F4D7B] text-[#F5EDE0] hover:bg-[#6A395B] dark:bg-[#8F4D7B] dark:hover:bg-[#6A395B]", className)}>
         <ShoppingBag className="mr-2 h-4 w-4" />
         Add to Basket
       </Button>
@@ -57,14 +57,14 @@ export function AddToCartButton({ productId, name, price, image, stock, classNam
 
   // In cart — show quantity controls
   return (
-    <div className={cn("flex h-11 w-full items-center rounded-md border border-[#E8D0D8] bg-white dark:border-[#7D2035]/30 dark:bg-[#2D1018]", className)}>
-      <Button variant="ghost" size="icon" className="h-full flex-1 rounded-r-none text-[#7D2035] hover:bg-[#FFF8F5] hover:text-[#4A0E1F] dark:text-[#B8899A] dark:hover:bg-[#4A0E1F]/30" onClick={handleDecrement}>
+    <div className={cn("flex h-11 w-full items-center rounded-md border border-[#F0D6E8] bg-white dark:border-[#8F4D7B]/30 dark:bg-[#6A395B]", className)}>
+      <Button variant="ghost" size="icon" className="h-full flex-1 rounded-r-none text-[#8F4D7B] hover:bg-[#FDF7FB] hover:text-[#6A395B] dark:text-[#DA90C4] dark:hover:bg-[#3D1F35]/30" onClick={handleDecrement}>
         <Minus className="h-4 w-4" />
       </Button>
 
-      <span className="flex-1 text-center text-sm font-semibold tabular-nums text-[#2D1018] dark:text-[#F5EDE0]">{quantityInCart}</span>
+      <span className="flex-1 text-center text-sm font-semibold tabular-nums text-[#6A395B] dark:text-[#F5EDE0]">{quantityInCart}</span>
 
-      <Button variant="ghost" size="icon" className="h-full flex-1 rounded-l-none text-[#7D2035] hover:bg-[#FFF8F5] hover:text-[#4A0E1F] disabled:opacity-20 dark:text-[#B8899A] dark:hover:bg-[#4A0E1F]/30" onClick={handleAdd} disabled={isAtMax}>
+      <Button variant="ghost" size="icon" className="h-full flex-1 rounded-l-none text-[#8F4D7B] hover:bg-[#FDF7FB] hover:text-[#6A395B] dark:text-[#DA90C4] dark:hover:bg-[#3D1F35]/30" onClick={handleAdd} disabled={isAtMax}>
         <Plus className="h-4 w-4" />
       </Button>
     </div>

@@ -13,10 +13,10 @@ export function CategoryTiles({ categories, activeCategory }: CategoryTilesProps
     <div className="relative">
       <div className="flex gap-4 overflow-x-auto py-4 pl-8 pr-4 sm:pl-12 sm:pr-6 lg:pl-10 lg:pr-8 scrollbar-hide">
         {/* All Products tile */}
-        <Link href="/" className={`group relative flex-shrink-0 overflow-hidden rounded-xl transition-all duration-300 ${!activeCategory ? "ring-2 ring-[#7D2035] ring-offset-2 dark:ring-offset-[#1A0810]" : "hover:ring-2 hover:ring-[#B8899A] hover:ring-offset-2 dark:hover:ring-[#B8899A] dark:hover:ring-offset-[#1A0810]"}`}>
+        <Link href="/" className={`group relative flex-shrink-0 overflow-hidden rounded-xl transition-all duration-300 ${!activeCategory ? "ring-2 ring-[#8F4D7B] ring-offset-2 dark:ring-offset-[#3D1F35]" : "hover:ring-2 hover:ring-[#BE7EAB] hover:ring-offset-2 dark:hover:ring-[#BE7EAB] dark:hover:ring-offset-[#3D1F35]"}`}>
           <div className="relative h-32 w-56 sm:h-56 sm:w-80">
-            {/* Mauve gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B8899A] to-[#7D2035] dark:from-[#4A0E1F] dark:to-[#2D1018]" />
+            {/* gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#BE7EAB] to-[#8F4D7B] dark:from-[#6A395B] dark:to-[#3D1F35]" />
 
             {/* Icon */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -39,10 +39,10 @@ export function CategoryTiles({ categories, activeCategory }: CategoryTilesProps
           const imageUrl = category.image?.asset?.url;
 
           return (
-            <Link key={category._id} href={`/?category=${category.slug}`} className={`group relative flex-shrink-0 overflow-hidden rounded-xl transition-all duration-300 ${isActive ? "ring-2 ring-[#7D2035] ring-offset-2 dark:ring-offset-[#1A0810]" : "hover:ring-2 hover:ring-[#B8899A] hover:ring-offset-2 dark:hover:ring-[#B8899A] dark:hover:ring-offset-[#1A0810]"}`}>
+            <Link key={category._id} href={`/?category=${category.slug}`} className={`group relative flex-shrink-0 overflow-hidden rounded-xl transition-all duration-300 ${isActive ? "ring-2 ring-[#8F4D7B] ring-offset-2 dark:ring-offset-[#3D1F35]" : "hover:ring-2 hover:ring-[#BE7EAB] hover:ring-offset-2 dark:hover:ring-[#BE7EAB] dark:hover:ring-offset-[#3D1F35]"}`}>
               <div className="relative h-32 w-56 sm:h-56 sm:w-80">
                 {/* Background image or mauve gradient fallback */}
-                {imageUrl ? <Image src={imageUrl} alt={category.title ?? "Category"} fill className="object-cover transition-transform duration-500 group-hover:scale-110" /> : <div className="absolute inset-0 bg-gradient-to-br from-[#B8899A] to-[#7D2035]" />}
+                {imageUrl ? <Image src={imageUrl} alt={category.title ?? "Category"} fill className="object-cover transition-transform duration-500 group-hover:scale-110" /> : <div className="absolute inset-0 bg-gradient-to-br from-[#BE7EAB] to-[#8F4D7B]" />}
 
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
@@ -56,8 +56,8 @@ export function CategoryTiles({ categories, activeCategory }: CategoryTilesProps
                 {isActive && (
                   <div className="absolute top-2 right-2">
                     <span className="flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#B8899A] opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7D2035]" />
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#DA90C4] opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#8F4D7B]" />
                     </span>
                   </div>
                 )}

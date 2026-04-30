@@ -10,7 +10,7 @@ interface ProductGridProps {
 export function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="min-h-[400px] rounded-2xl border-2 border-dashed border-[#E8D0D8] bg-[#FFF8F5]/50 dark:border-[#7D2035]/30 dark:bg-[#2D1018]/50">
+      <div className="min-h-[400px] rounded-2xl border-2 border-dashed border-[#F0D6E8] bg-[#FDF7FB]/50 dark:border-[#8F4D7B]/30 dark:bg-[#6A395B]/50">
         <EmptyState icon={PackageSearch} title="No designs found" description="Try adjusting your search or filters to find what you're looking for" size="lg" />
       </div>
     );

@@ -81,31 +81,31 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
 
   const FilterLabel = ({ children, isActive, filterKey }: { children: React.ReactNode; isActive: boolean; filterKey: string }) => (
     <div className="mb-2 flex items-center justify-between">
-      <span className={`block text-sm font-medium ${isActive ? "text-[#2D1018] dark:text-[#F5EDE0]" : "text-[#7D2035]/70 dark:text-[#B8899A]"}`}>
+      <span className={`block text-sm font-medium ${isActive ? "text-[#6A395B] dark:text-[#F5EDE0]" : "text-[#8F4D7B]/70 dark:text-[#BE7EAB]"}`}>
         {children}
-        {isActive && <Badge className="ml-2 h-5 bg-[#7D2035] px-1.5 text-xs text-[#F5EDE0] hover:bg-[#4A0E1F]">Active</Badge>}
+        {isActive && <Badge className="ml-2 h-5 bg-[#8F4D7B] px-1.5 text-xs text-[#F5EDE0] hover:bg-[#6A395B]">Active</Badge>}
       </span>
       {isActive && (
-        <button type="button" onClick={() => clearSingleFilter(filterKey)} className="text-[#B8899A] hover:text-[#7D2035] dark:hover:text-[#F5EDE0]" aria-label={`Clear ${filterKey} filter`}>
+        <button type="button" onClick={() => clearSingleFilter(filterKey)} className="text-[#BE7EAB] hover:text-[#8F4D7B] dark:hover:text-[#F5EDE0]" aria-label={`Clear ${filterKey} filter`}>
           <X className="h-4 w-4" />
         </button>
       )}
     </div>
   );
 
-  const activeInputClass = "border-[#7D2035] ring-1 ring-[#7D2035] dark:border-[#B8899A] dark:ring-[#B8899A]";
+  const activeInputClass = "border-[#8F4D7B] ring-1 ring-[#8F4D7B] dark:border-[#DA90C4] dark:ring-[#DA90C4]";
 
   return (
-    <div className="space-y-6 rounded-lg border border-[#E8D0D8] bg-white p-6 dark:border-[#7D2035]/30 dark:bg-[#2D1018]">
+    <div className="space-y-6 rounded-lg border border-[#F0D6E8] bg-white p-6 dark:border-[#8F4D7B]/30 dark:bg-[#6A395B]">
       {/* Clear Filters */}
       {hasActiveFilters && (
-        <div className="rounded-lg border-2 border-[#B8899A] bg-[#FFF8F5] p-3 dark:border-[#7D2035] dark:bg-[#4A0E1F]/40">
+        <div className="rounded-lg border-2 border-[#BE7EAB] bg-[#FDF7FB] p-3 dark:border-[#8F4D7B] dark:bg-[#3D1F35]/40">
           <div className="mb-2 flex items-center justify-between">
-            <span className="text-sm font-medium text-[#7D2035] dark:text-[#F5EDE0]">
+            <span className="text-sm font-medium text-[#8F4D7B] dark:text-[#F5EDE0]">
               {activeFilterCount} {activeFilterCount === 1 ? "filter" : "filters"} applied
             </span>
           </div>
-          <Button size="sm" onClick={handleClearFilters} className="w-full bg-[#7D2035] text-[#F5EDE0] hover:bg-[#4A0E1F] dark:bg-[#7D2035] dark:hover:bg-[#4A0E1F]">
+          <Button size="sm" onClick={handleClearFilters} className="w-full bg-[#8F4D7B] text-[#F5EDE0] hover:bg-[#6A395B] dark:bg-[#8F4D7B] dark:hover:bg-[#6A395B]">
             <X className="mr-2 h-4 w-4" />
             Clear All Filters
           </Button>
@@ -119,7 +119,7 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
         </FilterLabel>
         <form onSubmit={handleSearchSubmit} className="flex gap-2">
           <Input name="search" placeholder="Search nail designs..." defaultValue={currentSearch} className={`flex-1 ${isSearchActive ? activeInputClass : ""}`} />
-          <Button type="submit" size="sm" className="bg-[#7D2035] text-[#F5EDE0] hover:bg-[#4A0E1F]">
+          <Button type="submit" size="sm" className="bg-[#8F4D7B] text-[#F5EDE0] hover:bg-[#6A395B]">
             Search
           </Button>
         </form>
@@ -203,24 +203,24 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
               maxPrice: max < 1000 ? max : null,
             });
           }}
-          className={`mt-4 ${isPriceActive ? "[&_[role=slider]]:border-[#7D2035] [&_[role=slider]]:ring-[#7D2035]" : ""}`}
+          className={`mt-4 ${isPriceActive ? "[&_[role=slider]]:border-[#8F4D7B] [&_[role=slider]]:ring-[#8F4D7B]" : ""}`}
         />
       </div>
 
       {/* In Stock Only */}
       <div>
         <label className="flex cursor-pointer items-center gap-3">
-          <input type="checkbox" checked={currentInStock} onChange={(e) => updateParams({ inStock: e.target.checked ? "true" : null })} className="h-5 w-5 rounded border-[#E8D0D8] text-[#7D2035] focus:ring-[#7D2035] dark:border-[#7D2035]/50 dark:bg-[#2D1018]" />
-          <span className={`text-sm font-medium ${isInStockActive ? "text-[#2D1018] dark:text-[#F5EDE0]" : "text-[#7D2035]/70 dark:text-[#B8899A]"}`}>
+          <input type="checkbox" checked={currentInStock} onChange={(e) => updateParams({ inStock: e.target.checked ? "true" : null })} className="h-5 w-5 rounded border-[#F0D6E8] text-[#8F4D7B] focus:ring-[#8F4D7B] dark:border-[#8F4D7B]/50 dark:bg-[#6A395B]" />
+          <span className={`text-sm font-medium ${isInStockActive ? "text-[#6A395B] dark:text-[#F5EDE0]" : "text-[#8F4D7B]/70 dark:text-[#BE7EAB]"}`}>
             Show only in-stock
-            {isInStockActive && <Badge className="ml-2 h-5 bg-[#7D2035] px-1.5 text-xs text-[#F5EDE0] hover:bg-[#4A0E1F]">Active</Badge>}
+            {isInStockActive && <Badge className="ml-2 h-5 bg-[#8F4D7B] px-1.5 text-xs text-[#F5EDE0] hover:bg-[#6A395B]">Active</Badge>}
           </span>
         </label>
       </div>
 
       {/* Sort */}
       <div>
-        <span className="mb-2 block text-sm font-medium text-[#7D2035]/70 dark:text-[#B8899A]">Sort By</span>
+        <span className="mb-2 block text-sm font-medium text-[#8F4D7B]/70 dark:text-[#BE7EAB]">Sort By</span>
         <Select value={currentSort} onValueChange={(value) => updateParams({ sort: value })}>
           <SelectTrigger>
             <SelectValue />
