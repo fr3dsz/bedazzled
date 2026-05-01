@@ -24,10 +24,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="min-h-screen bg-[#FDF7FB] dark:bg-[#3D1F35]">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Image Gallery */}
-          <ProductGallery images={product.images} productName={product.name} />
+      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-12 lg:py-16">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start xl:grid-cols-[55%_45%]">
+          {/* Image Gallery — sticky + bigger */}
+          <div className="lg:sticky lg:top-24">
+            <ProductGallery images={product.images} productName={product.name} />
+          </div>
 
           {/* Product Info */}
           <ProductInfo product={product} />
