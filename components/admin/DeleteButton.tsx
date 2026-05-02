@@ -74,7 +74,7 @@ function DeleteButtonContent({ handle, redirectTo = "/admin/inventory" }: Delete
     return (
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
+          <TooltipTrigger>
             <Button variant="destructive" size="sm" className="gap-1.5" asChild>
               <Link href={`/studio/structure/${handle.documentType};${baseId}`} target="_blank">
                 <Trash2 className="h-4 w-4" />
