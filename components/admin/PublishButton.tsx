@@ -137,7 +137,7 @@ function RevertButtonContent({ size = "icon", ...handle }: RevertButtonProps) {
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
+      <TooltipTrigger>
         <Button variant="destructive" size={size} onClick={handleRevert} disabled={isReverting}>
           {isReverting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Undo2 className="h-4 w-4" />}
         </Button>
