@@ -48,7 +48,7 @@ export const customerType = defineType({
     select: {
       email: "email",
       name: "name",
-      stripeCustomerId: "paymongoCustomerId",
+      paymongoCustomerId: "paymongoCustomerId",
     },
     prepare({ email, name, paymongoCustomerId }) {
       return {
